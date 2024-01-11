@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "bun index.js"
+    "start": "bun index.js",
+    "dev": "bun run --watch index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "elysia": "^0.8.9"
+  }
 }

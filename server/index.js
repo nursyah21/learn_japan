@@ -1,8 +1,9 @@
-const server = Bun.serve({
-    port: 3000,
-    fetch(request) {
-        return new Response("Welcome to Bun!");
-    },
-});
+import { Elysia } from 'elysia'
+const port = process.env.PORT || 3000
 
-console.log(`Listening on localhost:${server.port}`);
+new Elysia()
+    .get('/', () => 'Welcome to Bun!')
+    .get('/json', () => ({
+        hello: 'world'
+    }))
+    .listen(port)
