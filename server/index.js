@@ -7,3 +7,5 @@ new Elysia()
         hello: 'world'
     }))
     .listen(port)
+
+console.log(`Listening on localhost:${port}`);
