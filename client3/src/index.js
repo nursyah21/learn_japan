@@ -1,8 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {useRoutes} from 'hookrouter'
+import Home from './pages/Home'
+import About from './pages/About'
+
+const routes = {
+  '/': () => <Home />,
+  '/about': () => <About />,
+}
+
+const App = () => {
+  const routeResult = useRoutes(routes)
+  return routeResult || <>404 Not Found</>
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
